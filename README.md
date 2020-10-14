@@ -1,12 +1,12 @@
 # iniReader
 
-![](icon.jpg)
+![](icon1.jpg)
 
 Package inireader provides INI file read functionality in Golang.
 
 ### look familiar?
 
-Yep, forgery of [ini](https://github.com/go-ini/ini)
+( Yep, forgery of [ini](https://github.com/go-ini/ini) )
 
 ## Features
 
