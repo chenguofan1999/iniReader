@@ -48,8 +48,8 @@ func InitConfig(fileName string) Cfg {
 			continue
 		}
 
-		// A new section
 		if s[0] == '[' {
+			// A section
 			index := strings.Index(s, "]")
 			secName := strings.TrimSpace(s[1:index])
 			cfg.Cur = cfg.Section(secName)
