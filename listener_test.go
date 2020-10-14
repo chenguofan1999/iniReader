@@ -8,5 +8,5 @@ import (
 
 func TestFileListener(t *testing.T) {
 	var fl inireader.FileListener
-	fl.Listen("testData/naive.ini")
+	fl.Listen("testData/my.ini")
 }
