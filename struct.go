@@ -1,4 +1,4 @@
-package iniReader
+package inireader
 
 var commentSymbol byte
 

@@ -1,4 +1,4 @@
-package iniReader
+package inireader
 
 import (
 	"bufio"
