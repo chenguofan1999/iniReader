@@ -1,6 +1,6 @@
 # iniReader
 
-![](icon1.jpg)
+![](icon.jpg)
 
 Package inireader provides INI file read functionality in Golang.
 
@@ -17,13 +17,15 @@ Package inireader provides INI file read functionality in Golang.
 
 ## Installation
 
-The minimum requirement of Go is unknown.
+The minimum requirement of Go is unknown. Good luck!
 
 ```sh
 go get github.com/chenguofan1999/inireader
 ```
 
 ### Update
+
+Update as you please, we won't add new features anyway.
 
 ```sh
 go get -u github.com/chenguofan1999/inireader
@@ -65,7 +67,6 @@ http_port = 9999
 # Redirect to correct domain if host header does not match domain
 # Prevents DNS rebinding attacks
 enforce_domain = 0
-
 ```
 
 *login.ini*
@@ -81,7 +82,6 @@ email = yourEmail
 
 # user_password
 password = yourPassword
-
 ```
 
 
@@ -182,5 +182,5 @@ $
 
 ## License
 
-This project is under wtfpl project.  
+This project is under wtfpl license.  
 See the [LICENSE](https://github.com/anak10thn/WTFPL) file for the full license text.
