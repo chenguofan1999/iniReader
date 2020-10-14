@@ -17,12 +17,12 @@ func Init() {
 	}
 }
 
-// InitConfig : Get configure struct from .init file
-func InitConfig(fileName string) Cfg {
+// Load : Get configure struct from .init file
+func Load(fileName string) Cfg {
 
 	Init()
 
-	var initSec Sec = Sec{Name: "", Map: map[string]string{}}
+	var initSec Sec = Sec{Name: "", Map: map[string]string{}, Descriptions: map[string]string{}}
 	var cfg Cfg = Cfg{Map: map[string]*Sec{"": &initSec}, Cur: &initSec}
 
 	f, err := os.Open(fileName)
@@ -45,18 +45,27 @@ func InitConfig(fileName string) Cfg {
 
 		// empty line
 		if len(s) == 0 {
+			cfg.UnusedDescription = false
 			continue
 		}
 
 		if s[0] == '[' {
 			// A section
+			cfg.UnusedDescription = false
 			index := strings.Index(s, "]")
 			secName := strings.TrimSpace(s[1:index])
 			cfg.Cur = cfg.Section(secName)
 		} else if s[0] == commentSymbol {
 			// A description for sec
-			desc := s[1:]
-			cfg.Cur.Description = desc
+			desc := strings.TrimSpace(s[1:])
+
+			if cfg.UnusedDescription {
+				cfg.LastDescription += "\n"
+				cfg.LastDescription += desc
+			} else {
+				cfg.LastDescription = desc
+			}
+			cfg.UnusedDescription = true
 		} else {
 			// A key - value pair
 			index := strings.Index(s, "=")
@@ -75,6 +84,10 @@ func InitConfig(fileName string) Cfg {
 			}
 
 			cfg.Cur.Map[key] = val
+			if cfg.UnusedDescription {
+				cfg.Cur.Descriptions[key] = cfg.LastDescription
+				cfg.UnusedDescription = false
+			}
 		}
 
 	}

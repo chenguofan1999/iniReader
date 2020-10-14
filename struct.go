@@ -1,22 +1,20 @@
 package inireader
 
-import (
-	"fmt"
-)
-
 var commentSymbol byte
 
 // Cfg : The struct of configuration
 type Cfg struct {
-	Map map[string]*Sec
-	Cur *Sec
+	Map               map[string]*Sec
+	LastDescription   string
+	UnusedDescription bool
+	Cur               *Sec
 }
 
 // Sec : The struct of configuration Section
 type Sec struct {
-	Name        string
-	Description string
-	Map         map[string]string
+	Name         string
+	Descriptions map[string]string
+	Map          map[string]string
 }
 
 // Section : Get section by section name
@@ -25,8 +23,8 @@ func (c Cfg) Section(name string) *Sec {
 		return sec
 	}
 
-	fmt.Println("Did not find sec:", name)
-	c.Map[name] = &Sec{Name: name, Map: map[string]string{}}
+	//fmt.Println("Creating Sec: ", name)
+	c.Map[name] = &Sec{Name: name, Map: map[string]string{}, Descriptions: map[string]string{}}
 	return c.Map[name]
 }
 
