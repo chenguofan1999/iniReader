@@ -37,7 +37,8 @@ $ tree
 └── my.ini
 ```
 
-`my.ini`
+*my.ini*
+
 ```ini
 # possible values : production, development
 app_mode = development
@@ -61,7 +62,7 @@ enforce_domain = 0
 
 ```
 
-`login.ini`
+*login.ini*
 
 ```ini
 [User1]
@@ -78,7 +79,7 @@ password = yourPassword
 ```
 
 
-`main.go`
+*main.go*
 
 ```go
 package main
@@ -129,7 +130,7 @@ go run main.go
 ```
 
 
-Result as follow, notice that the program has not ended yet, it is now runing `watch` function, which is waiting for `login.ini` to be edited.
+Result as follow, notice that the program has not ended yet, it is now runing `watch` function, which is waiting for *login.ini* to be edited.
 
 ```
 $ go run main.go
@@ -141,7 +142,7 @@ paths.data:
         Value      :  /home/git/grafana
 ```
 
-Now edit `login.ini` like this and save it ,
+Now edit *login.ini* like this and save it ,
 
 ```
 [User1]
