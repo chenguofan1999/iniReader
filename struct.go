@@ -32,3 +32,12 @@ func (c Cfg) Section(name string) *Sec {
 func (s Sec) Key(key string) string {
 	return s.Map[key]
 }
+
+// ErrReadingIniFile indicates the error type of reading ini file failed
+type ErrReadingIniFile struct {
+}
+
+// Error implemented by ErrReadingIniFile
+func (err ErrReadingIniFile) Error() string {
+	return "Error in reading init file"
+}
