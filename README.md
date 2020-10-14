@@ -4,6 +4,10 @@
 
 Package inireader provides INI file read functionality in Golang.
 
+### look familiar?
+
+Yep, forgery of [ini](https://github.com/go-ini/ini)
+
 ## Features
 
 - Load configure info from ini file **by sections**
