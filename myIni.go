@@ -52,9 +52,7 @@ func InitConfig(fileName string) Cfg {
 		if s[0] == '[' {
 			index := strings.Index(s, "]")
 			secName := strings.TrimSpace(s[1:index])
-			newSec := Sec{Name: secName, Map: map[string]string{}}
-			cfg.Map[secName] = &newSec
-			cfg.Cur = &newSec
+			cfg.Cur = cfg.Section(secName)
 		} else if s[0] == commentSymbol {
 			// A description for sec
 			desc := s[1:]
