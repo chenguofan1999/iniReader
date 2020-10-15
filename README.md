@@ -28,7 +28,7 @@ A : 不能。
 
 ## 安装
 
-安装所需的最低 Go 语言版本不得而知。
+安装所需的最低 Go 语言版本不得而知，祝你好运。
 
 ```sh
 go get github.com/chenguofan1999/inireader
@@ -36,7 +36,7 @@ go get github.com/chenguofan1999/inireader
 
 **更新：**
 
-更新请自便，放心我们一定不会增加新的功能。
+更新请自便，反正我们也不会增加新的功能。
 
 ```sh
 go get -u github.com/chenguofan1999/inireader
@@ -197,4 +197,4 @@ $
 
 ## API 文档
 
-[![GoDoc](https://img.shields.io/badge/GoDoc-Reference-blue?style=for-the-badge&logo=go)](https://pkg.go.dev/github.com/chenguofan1999/inireader)
+[![GoDoc](https://img.shields.io/badge/GoDoc-Reference-blue?style=for-the-badge&logo=go)](doc_zh_CN.md)
