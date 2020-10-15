@@ -8,7 +8,7 @@
 
 Package inireader provides INI file read functionality in Golang.
 
-### look familiar?
+### Looks familiar?
 
 Yep, Referenced [INI](https://github.com/go-ini/ini) 
 
