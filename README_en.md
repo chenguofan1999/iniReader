@@ -6,45 +6,40 @@
 
 ![](icon.jpg)
 
-本包提供了 Go 语言中读 INI 文件的功能。
+Package inireader provides INI file read functionality in Golang.
 
-```
-Q : 写 INI 文件呢？  
-A : 不能。
-```
+### Looks familiar?
 
-### 看起来很眼熟？
+Yep, Referenced [INI](https://github.com/go-ini/ini) 
 
-是的，这个包参考了 [INI](https://github.com/go-ini/ini)。  
+## Features
 
+- Load configure info from ini file **by sections**
+- Support description(comments), including multiple-line description
+- Watch for file changes and reload
+- Manipulate sections, keys and comments with ease.
 
-## 功能特性
+## Installation
 
-- 支持基本的 INI 文件读取
-- 支持分区
-- 支持属性注释，包括多行注释
-- 支持**监听** INI 文件改动, 并重新加载
-- 轻松操作分区、键值和注释
-
-## 安装
-
-安装所需的最低 Go 语言版本不得而知。
+The minimum requirement of Go is unknown. Good luck!
 
 ```sh
 go get github.com/chenguofan1999/inireader
 ```
 
-**更新：**
+### Update
 
-更新请自便，放心我们一定不会增加新的功能。
+Update as you please, we won't add new features anyway.
 
 ```sh
 go get -u github.com/chenguofan1999/inireader
 ```
 
-## 使用示例
+## Usage
 
-目录结构：
+An example here :
+
+Now I got a repository including these files:
 
 ```
 $ tree
@@ -139,14 +134,13 @@ func main() {
 }
 ```
 
-运行它！
-
+Run it.
 ```sh
 go run main.go
 ```
 
 
-结果如下，注意程序并没有运行结束，而是在执行 watch 函数，等待 *login.ini* 被修改。
+Result as follow, notice that the program has not ended yet, it is now runing `watch` function, waiting for *login.ini* to be edited.
 
 ```
 $ go run main.go
@@ -158,7 +152,7 @@ paths.data:
         Value      :  /home/git/grafana
 ```
 
-现在编辑 *login.ini* 并保存
+Now edit *login.ini* like this and save it ,
 
 ```
 [User1]
@@ -173,7 +167,7 @@ email = president@mail.sysu.edu.cn
 password = HowDoIKnow
 ```
 
-终端中出现了新的输出，程序终止。
+New output comes out and program ends.
 
 ```
 User1.name
@@ -192,9 +186,5 @@ $
 
 ## License
 
-这个项目用的是 wtfpl License.
-点击 [LICENSE](https://github.com/anak10thn/WTFPL) 查看具体内容。
-
-## API 文档
-
-[![GoDoc](https://img.shields.io/badge/GoDoc-Reference-blue?style=for-the-badge&logo=go)](https://pkg.go.dev/github.com/chenguofan1999/inireader)
+This project is under wtfpl license.  
+See the [LICENSE](https://github.com/anak10thn/WTFPL) file for the full license text.
