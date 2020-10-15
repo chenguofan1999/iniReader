@@ -6,40 +6,45 @@
 
 ![](icon.jpg)
 
-Package inireader provides INI file read functionality in Golang.
+本包提供了 Go 语言中读 INI 文件的功能。
 
-### look familiar?
+```
+Q : 写 INI 文件呢？  
+A : 不能。
+```
 
-Yep, Referenced [INI](https://github.com/go-ini/ini) 
+### 看起来很眼熟？
 
-## Features
+是的，这个包参考了 [INI](https://github.com/go-ini/ini)。  
 
-- Load configure info from ini file **by sections**
-- Support description(comments), including multiple-line description
-- Watch for file changes and reload
-- Manipulate sections, keys and comments with ease.
 
-## Installation
+## 功能特性
 
-The minimum requirement of Go is unknown. Good luck!
+- 支持基本的 INI 文件读取
+- 支持分区
+- 支持属性注释，包括多行注释
+- 支持**监听** INI 文件改动, 并重新加载
+- 轻松操作分区、键值和注释
+
+## 安装
+
+安装所需的最低 Go 语言版本不得而知。
 
 ```sh
 go get github.com/chenguofan1999/inireader
 ```
 
-### Update
+**更新：**
 
-Update as you please, we won't add new features anyway.
+更新请自便，放心我们一定不会增加新的功能。
 
 ```sh
 go get -u github.com/chenguofan1999/inireader
 ```
 
-## Usage
+## 使用示例
 
-An example here :
-
-Now I got a repository including these files:
+目录结构：
 
 ```
 $ tree
@@ -134,13 +139,14 @@ func main() {
 }
 ```
 
-Run it.
+运行它！
+
 ```sh
 go run main.go
 ```
 
 
-Result as follow, notice that the program has not ended yet, it is now runing `watch` function, waiting for *login.ini* to be edited.
+结果如下，注意程序并没有运行结束，而是在执行 watch 函数，等待 *login.ini* 被修改。
 
 ```
 $ go run main.go
@@ -152,7 +158,7 @@ paths.data:
         Value      :  /home/git/grafana
 ```
 
-Now edit *login.ini* like this and save it ,
+现在编辑 *login.ini* 并保存
 
 ```
 [User1]
@@ -167,7 +173,7 @@ email = president@mail.sysu.edu.cn
 password = HowDoIKnow
 ```
 
-New output comes out and program ends.
+终端中出现了新的输出，程序终止。
 
 ```
 User1.name
@@ -186,5 +192,9 @@ $
 
 ## License
 
-This project is under wtfpl license.  
-See the [LICENSE](https://github.com/anak10thn/WTFPL) file for the full license text.
+这个项目用的是 wtfpl License.
+点击 [LICENSE](https://github.com/anak10thn/WTFPL) 查看具体内容。
+
+## API 文档
+
+[![GoDoc](https://img.shields.io/badge/GoDoc-Reference-blue?style=for-the-badge&logo=go)](https://pkg.go.dev/github.com/chenguofan1999/inireader)
