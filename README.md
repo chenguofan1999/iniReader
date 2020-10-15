@@ -195,6 +195,6 @@ $
 这个项目用的是 wtfpl License.
 点击 [LICENSE](https://github.com/anak10thn/WTFPL) 查看具体内容。
 
-## API 文档
+## 中文 API 文档
 
 [![GoDoc](https://img.shields.io/badge/GoDoc-Reference-blue?style=for-the-badge&logo=go)](doc_zh_CN.md)
